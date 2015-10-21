@@ -1,0 +1,6 @@
+Backbone components:
+  -events: to add an object the ability to publish or sub events
+  -models: application data
+  -collections: a set of Models
+  -views: to render models and listen for DOM/model events
+  -routers: to create Single page applications
