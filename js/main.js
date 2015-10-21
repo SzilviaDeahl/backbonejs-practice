@@ -3,11 +3,11 @@
 // files and modules.
 
 
-var Song = Backbone.Model.extend({
-  initialize: function () {
-    console.log('A new song has been created');
-  }
-});
+// var Song = Backbone.Model.extend({
+//   initialize: function () {
+//     console.log('A new song has been created');
+//   }
+// });
 var Song = Backbone.Model.extend();
 var song = new Song({
   title: 'Blue in Green',
