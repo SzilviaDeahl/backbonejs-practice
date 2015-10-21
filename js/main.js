@@ -10,6 +10,7 @@
 // });
 // ******************* Initialize Model end **************
 
+
 // ******************* Setting Attributes ****************
 //
 // var song = new Song({
@@ -17,6 +18,13 @@
 //   artist: 'Miles Davis',
 //   publishYear: 1959
 // });
+
+// var Song = Backbone.Model.extend({
+//   initialize: function () {
+//     console.log('A new song has been created');
+//   }
+// });
+
 // song.set('title', 'Blue in Green');
 // song.set({
 //   artist: 'Miles Davis',
