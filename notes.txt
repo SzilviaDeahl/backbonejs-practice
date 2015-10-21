@@ -4,3 +4,40 @@ Backbone components:
   -collections: a set of Models
   -views: to render models and listen for DOM/model events
   -routers: to create Single page applications
+
+MODELS
+
+Working with Attributes
+  -song.set('', '') to set an attribute
+  -song.get('smth') to read an attribute
+  -song.has('smth') to check if the model has a given attribute
+  -song.unset('smth') to remove that attribute from model
+  -song.clear() to remove all attributes the model has
+  -defaults:{} to set default values for the model. If the value is not initialized for that attribute, the default values will be set
+
+Validation of Models
+  -its convention to return a string error to be returned
+  -to implement validation, we need to implement validate method on our models
+  -entering song.isValid(); in console will check if the model is valid or not
+  -enter song.validationError; will return the last validation error message
+
+Inheritance
+  -you can extend a method to use on another Model
+  -however if you create a method inside the model, it will overwrite the inherited method in the base class
+   and execute the one instantiated inside the Model
+  -you can still call the method in the base class using the base method:
+   you need to acces the prototype of the baseclass and then call the target method using the apply method
+
+Connecting to the Server
+  -backbone models use restful APIs on the server
+  -simply call the fetch() method on the model, and the model will then take care of the AJAX call to get the data
+  -backbone models support three operations to work with the persistance store:
+    -fetch() to get the model from the Server (get request)
+    -save() to insert or update the model (post-for new objects or put request for existing objects)
+    -destroy() to delete the model (delete request)
+  -backbone relies on a urlRoot property to construct the url to the corresponding end point
+  - by convention backbone will assume that your model has an id attribute
+    if that is not the case, you can specify which attribute will be used as an id attribute
+      var song = Backbone.Model.extend({
+        idAttribute: 'songId'
+      });
