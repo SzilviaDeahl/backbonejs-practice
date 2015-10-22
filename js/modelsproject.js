@@ -52,3 +52,9 @@ var vehicles = new Vehicles([
 
 var blue = vehicles.where({color: "Blue"});
 console.log(blue);
+
+console.log(vehicles.where({registrationNumber: 'XLI887'}));
+vehicles.remove(vehicles.where({registrationNumber: 'XLI887'}));
+console.log(vehicles);
+
+console.log(vehicles.toJSON());
