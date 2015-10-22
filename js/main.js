@@ -125,3 +125,76 @@
 //  If empty object is ommited, success and error wont be executed -->
 //
 //  *************** Connecting to Server end *******************
+
+// ************** Creating Collections ********************
+//
+// var Song = Backbone.Model.extend();
+//
+// var Songs = Backbone.Collection.extend({
+//   model: Song
+// }); --> creating a collection type -->
+//
+// var songs = new Songs([
+//   new Song({title: 'Song 1'}),
+//   new Song({title: 'Song 2'}),
+//   new Song({title: 'Song 3'})
+// ]);
+//
+// // --> OR -->
+// songs.add(new Song({title: 'Song 4'}));
+//
+// --> use -->
+//
+// songs.at(0) --> to get a model from the collection at the specified index-->
+//
+// --> OR -->
+//
+// songs.get('c1') --> gets the model using cid to identify which model to get -->
+//
+// songs.remove(songs.at(0)); --> to remove amodel from a collection  -->
+//
+// songs.length --> will return the number of models inside the collection -->
+//
+// ****************** Creating Collections end *******************
+
+// ************** Working with Collections ********************
+// Methods to use
+//
+// songs.add(new Song(), {at: 0}); --> specifies at which location do you want to insert new model -->
+// songs.push(new Song()); --> method to use to insert a model at the end of a collection -->
+// var lastSong = song.pop() --> removes and returns the model at the end of a collection -->
+// var jazzSongs = songs.where({genre: 'Jazz'}) --> method to search the collection ->
+// songs.findWhere({genre:'Jazz'}) --> checks the attributes we pass against the models attribute and returns sought after model -->
+// songs.filter(function (song) {
+//   return song.get('downloads') > 100;
+// }); --> we can use filter method for more complicated searching -->
+//
+// songs.each(function () {
+//
+// }); --> used to iterate collections -->
+//
+// ************* Working with Collections end **************
+
+ // ************** Connecting to the Server *****************
+ //
+ // -->to retrieve a collecion from the server, we need to specify a url and call the fetch method-->
+ //
+ // var Songs = Backbone.Collection.extend({
+ //   model: Song
+ //   url: '/api/songs' --> tells backbone where the collecton exists on the server -->
+ // });
+ //
+ // var songs = new Songs;
+ // songs.fetch(); --> this will send out a get request to the server to get the collections data (async call)-->
+ //  --> Backbone uses jQuery to make AJAX calls -->
+ //  songs.fetch({
+ //    data: {   -->
+ //      page: 2   --> Data hash -->
+ //    },   -->
+ //    success: function () {},
+ //    error: function(){};
+ //  }); --> this results in an extra query perimeter that gets sent along with the http get request -->
+ //
+ //  --> GET api/songs?page=2 -- >
+ //
+ //  ************** Connecting to the Server ******************

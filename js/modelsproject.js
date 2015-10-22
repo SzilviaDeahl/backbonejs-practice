@@ -37,3 +37,16 @@ if (car.isValid())
 console.log('Car is valid');
 else
   console.log(car.validationError);
+
+// var Vehicles = Backbone.Collection.extend({
+//   model: Vehicle
+// });
+//
+// var vehicles = new Vehicles([
+//   new Vehicle({car1: ' registrationNumber = “XLI887”, color = “Blue” '}),
+//   new Vehicle({car2: ' registrationNumber = “ZNP123”, color = “Blue” '}),
+//   new Vehicle({car3: 'registrationNumber = “XUV456”, color = “Gray”'})
+// ]);
+//
+// console.log(vehicles);
+// console.log(vehicles.findWhere({color: 'Blue'}));

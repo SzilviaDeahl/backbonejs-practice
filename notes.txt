@@ -41,3 +41,15 @@ Connecting to the Server
       var song = Backbone.Model.extend({
         idAttribute: 'songId'
       });
+
+COLLECTIONS
+
+    collections are useful when you want to work with a collection of models
+
+    -Every Backbone model has two IDs:
+      -the first is the persistent id, that is assigned by the Server
+      -the other is the cid, or client id that gets assigned by Backbone
+       cid is a temporary identifier that Backbone uses to keep track of objects
+      -to retrieve a collection from the server, we need to specify a url and call the fetch method
+      -Backbone uses jQuery to make AJAX calls. As a result you can pass additional arguments to the API using the data hash
+      
