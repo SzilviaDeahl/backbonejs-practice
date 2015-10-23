@@ -198,3 +198,17 @@
  //  --> GET api/songs?page=2 -- >
  //
  //  ************** Connecting to the Server ******************
+
+ // **************** Creating Views **********************
+
+ var SongView = Backbone.View.extend({
+   render: function () {
+     this.$el.html('Hello World');
+
+     return this;
+   }
+ });
+
+ var songView = new SongView();
+ songView.render();
+ $('#container').html(songView.$el);

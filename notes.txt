@@ -52,4 +52,10 @@ COLLECTIONS
        cid is a temporary identifier that Backbone uses to keep track of objects
       -to retrieve a collection from the server, we need to specify a url and call the fetch method
       -Backbone uses jQuery to make AJAX calls. As a result you can pass additional arguments to the API using the data hash
-      
+
+VIEWS
+
+    -backbone view is the object that is responsible for rendering the content of the view as well as responding to any events like click, drag, drops etc.
+    -every view has a reference to a DOM element and is responsible to render the content of this element as well as responding to any events
+    -they are more like controllers in the classic MVC terms
+    -every View has a DOM element at all times, this DOM element is an empty div
