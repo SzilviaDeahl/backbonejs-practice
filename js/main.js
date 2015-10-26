@@ -208,6 +208,8 @@
  });
 
  var SongView = Backbone.View.extend({
+   tagName: 'li',
+
    render: function () {
      this.$el.html(this.model.get('title'));
      return this;
@@ -230,5 +232,5 @@
    new Song({title: 'All Blues'})
  ]);
 
- var songsView = new SongsView({ el: '#container', model: songs});
+ var songsView = new SongsView({ el: '#songs', model: songs});
  songsView.render();
