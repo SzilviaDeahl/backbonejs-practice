@@ -200,37 +200,70 @@
  //  ************** Connecting to the Server ******************
 
  // **************** Creating Views **********************
+ //
+ // var Song = Backbone.Model.extend();
+ //
+ // var Songs = Backbone.Collection.extend({
+ //   model: Song
+ // });
+ //
+ // var SongView = Backbone.View.extend({
+ //   tagName: 'li',
+ //
+ //   render: function () {
+ //     this.$el.html(this.model.get('title'));
+ //     return this;
+ //   }
+ // });
+ //
+ // var SongsView = Backbone.View.extend({
+ //   render: function () {
+ //     var self = this;
+ //     this.model.each(function (song) {
+ //       var songView = new SongView({ model: song });
+ //       self.$el.append(songView.render().$el);
+ //     });
+ //   }
+ // });
+ //
+ // var songs = new Songs([
+ //   new Song({title: 'Blue in Green'}),
+ //   new Song({title: 'So what'}),
+ //   new Song({title: 'All Blues'})
+ // ]);
+ //
+ // var songsView = new SongsView({ el: '#songs', model: songs});
+ // songsView.render();
+ //
+ // ***************** Creating Views end *******************
 
- var Song = Backbone.Model.extend();
+// **************** Handling DOM Events *******************
 
- var Songs = Backbone.Collection.extend({
-   model: Song
- });
+// var Backbone = require('backbone'); // example: backbone is imported
+// // Add this!
+// if (window.__backboneAgent) {
+//   window.__backboneAgent.handleBackbone(Backbone);
+// };
 
- var SongView = Backbone.View.extend({
-   tagName: 'li',
+var Song = Backbone.Model.extend();
 
-   render: function () {
-     this.$el.html(this.model.get('title'));
-     return this;
-   }
- });
+var SongView = Backbone.View.extend({
+  events: {
+    'click': 'onClick'
+  },
 
- var SongsView = Backbone.View.extend({
-   render: function () {
-     var self = this;
-     this.model.each(function (song) {
-       var songView = new SongView({ model: song });
-       self.$el.append(songView.render().$el);
-     });
-   }
- });
+  onClick: function () {
+    console.log('Listen Clicked');
+  },
 
- var songs = new Songs([
-   new Song({title: 'Blue in Green'}),
-   new Song({title: 'So what'}),
-   new Song({title: 'All Blues'})
- ]);
+  render: function () {
+    this.$el.html(this.model.get('title') + '<button>Listen</button>');
 
- var songsView = new SongsView({ el: '#songs', model: songs});
- songsView.render();
+    return this;
+  }
+});
+
+var song = new Song({title: 'Blue in Green'});
+
+var songView = new SongView({ el: '#container', model: song});
+songView.render();
