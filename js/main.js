@@ -321,7 +321,7 @@
 //
 // var SongsView = Backbone.View.extend({
 //   tagName: 'ul',
-//
+// --> change div in body to ul tag, and change id to songs instead of container -->
 //   initialize: function () {
 //     this.model.on('add', this.onSongAdded, this);
 //     this.model.on('remove', this.onSongRemoved, this);
@@ -353,3 +353,24 @@
 // songsView.render();
 //
 // *************** Handling Collection EVents end ******************
+
+// **************** Templating ******************
+
+var Song = Backbone.Model.extend();
+
+var SongView = Backbone.View.extend({
+  render: function () {
+    var template = _.template($('#songTemplate').html());
+    var html = template(this.model.toJSON());
+    this.$el.html(html);
+
+    return this;
+  }
+});
+
+var song = new Song({title: 'Blue in Green', plays: 1100});
+
+var songView = new SongView({ el: '#container', model: song});
+songView.render();
+--> insert int index.html: -->
+--> <script id='songTemplate' type='text/html'><%= title %><button>Listen</button></script> -->
