@@ -249,15 +249,20 @@ var Song = Backbone.Model.extend();
 
 var SongView = Backbone.View.extend({
   events: {
-    'click': 'onClick'
+    'click': 'onClick',
+    'click .bookmark': 'onClickBookmark',
   },
 
   onClick: function () {
     console.log('Listen Clicked');
   },
+  onClickBookmark: function (e) {
+    e.stopPropagation();
+    console.log('Bookmark Clicked');
+  },
 
   render: function () {
-    this.$el.html(this.model.get('title') + '<button>Listen</button>');
+    this.$el.html(this.model.get('title') + '<button>Listen</button> <button class="bookmark">Bookmark</button>');
 
     return this;
   }
