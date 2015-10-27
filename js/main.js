@@ -220,6 +220,17 @@
  //      });
  //    };
 
+ // -then initialize a collection with cars inside and render:
+ // var songs = new Songs([
+ //   new Song({title: 'Blue in Green'}),
+ //   new Song({title: 'So what'}),
+ //   new Song({title: 'All Blues'})
+ // ]);
+ //
+ // var songsView = new SongsView({ el: '#songs', model: songs});
+ // songsView.render();
+
+
  // var Song = Backbone.Model.extend();
  //
  // var Songs = Backbone.Collection.extend({
@@ -424,7 +435,7 @@
 //
 // ****************** Events end ********************
 
-******* Create and Event Aggregator to Coordinate Multiple views *****
+// ******* Create and Event Aggregator to Coordinate Multiple views *****
 
 var Venue = Backbone.Model.extend();
 
@@ -435,11 +446,16 @@ var Venues = Backbone.Collection.extend({
 var VenueView = Backbone.View.extend({
 	tagName: "li",
 
+  initialize: function (options) {
+    this.bus = options.bus;
+  },
+
 	events: {
 		"click": "onClick",
 	},
 
 	onClick: function(){
+    this.bus.trigger('venueSelected', this.model);
 	},
 
 	render: function(){
@@ -454,11 +470,16 @@ var VenuesView = Backbone.View.extend({
 
 	id: "venues",
 
+  initialize: function (options) {
+    this.bus = options.bus;
+  },
+
+
 	render: function(){
 		var self = this;
 
 		this.model.each(function(venue){
-			var view = new VenueView({ model: venue });
+			var view = new VenueView({ model: venue, bus: self.bus });
 			self.$el.append(view.render().$el);
 		});
 
@@ -469,13 +490,26 @@ var VenuesView = Backbone.View.extend({
 var MapView = Backbone.View.extend({
 	el: "#map-container",
 
+  initialize: function (options) {
+    this.bus = options.bus;
+
+    this.bus.on('venueSelected', this.onVenueSelected, this)
+  },
+
+  onVenueSelected: function (venue) {
+    this.model = venue;
+    this.render();
+  },
+
 	render: function(){
 		if (this.model)
 			this.$("#venue-name").html(this.model.get("name"));
 
 		return this;
 	}
-})
+});
+
+var bus = _.extend({}, Backbone.Events);
 
 var venues = new Venues([
 	new Venue({ name: "30 Mill Espresso" }),
@@ -483,8 +517,8 @@ var venues = new Venues([
 	new Venue({ name: "Mr Foxx" })
 	]);
 
-var venuesView = new VenuesView({ model: venues});
+var venuesView = new VenuesView({ model: venues, bus: bus});
 $("#venues-container").html(venuesView.render().$el);
 
-var mapView = new MapView();
+var mapView = new MapView({bus: bus});
 mapView.render();
