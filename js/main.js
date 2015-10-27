@@ -201,6 +201,25 @@
 
  // **************** Creating Views **********************
  //
+
+ // -when creating VIEWs, always have to create:
+ //  -model
+ //  -collection (this is a plural word like Cars)
+ //  -view of one item, that renders each item in collection as a li
+ //    in this view you g=have to have a tagname for li, a render function and maybe an event like click that will trigger another function
+ //  -view for the collection (also plural because its multiple items)
+ //    inside collection view:
+ //    -tagname for ul,
+ //    -render function that will iterate through the collection using each function and then inside that each function
+ //    create a new variable for the view of one item, like:
+ //    render: function () {
+ //      ver self = this;
+ //      this.model.each(function (car) {
+ //        var car = new CarView({model: car});
+ //        self.$el.append(car.render().$el);
+ //      });
+ //    };
+
  // var Song = Backbone.Model.extend();
  //
  // var Songs = Backbone.Collection.extend({
@@ -399,5 +418,73 @@
 // });
 // // to unsubscribe from an event
 // person.off('walking');
+
+// -events are just containers with data
+// -events have no behavior
 //
 // ****************** Events end ********************
+
+******* Create and Event Aggregator to Coordinate Multiple views *****
+
+var Venue = Backbone.Model.extend();
+
+var Venues = Backbone.Collection.extend({
+	model: Venue
+});
+
+var VenueView = Backbone.View.extend({
+	tagName: "li",
+
+	events: {
+		"click": "onClick",
+	},
+
+	onClick: function(){
+	},
+
+	render: function(){
+		this.$el.html(this.model.get("name"));
+
+		return this;
+	}
+});
+
+var VenuesView = Backbone.View.extend({
+	tagName: "ul",
+
+	id: "venues",
+
+	render: function(){
+		var self = this;
+
+		this.model.each(function(venue){
+			var view = new VenueView({ model: venue });
+			self.$el.append(view.render().$el);
+		});
+
+		return this;
+	}
+});
+
+var MapView = Backbone.View.extend({
+	el: "#map-container",
+
+	render: function(){
+		if (this.model)
+			this.$("#venue-name").html(this.model.get("name"));
+
+		return this;
+	}
+})
+
+var venues = new Venues([
+	new Venue({ name: "30 Mill Espresso" }),
+	new Venue({ name: "Platform Espresso" }),
+	new Venue({ name: "Mr Foxx" })
+	]);
+
+var venuesView = new VenuesView({ model: venues});
+$("#venues-container").html(venuesView.render().$el);
+
+var mapView = new MapView();
+mapView.render();
