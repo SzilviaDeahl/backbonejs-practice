@@ -31,6 +31,24 @@ var VehiclesView = Backbone.View.extend({
     });
   }
 });
+// Aggregation
+var NewVehicleView = Backbone.View.extend({
+
+  events: {
+    'click .add': 'add'
+  },
+
+  add: function () {
+    this.collection.add();
+  },
+
+  render: function () {
+    this.$el.append('<input id="foobar" type="text"></input>' + '<button class="add">Add</button>')
+  }
+});
+
+var newVehiclesView = new NewVehicleView({ el: '#foobar', model: vehicles});
+newVehiclesView.render();
 
 var vehicles = new Vehicles([
   new Vehicle({name: 'car1', registrationNumber: 'XLI887'}),
