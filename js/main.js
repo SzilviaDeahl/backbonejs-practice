@@ -354,23 +354,50 @@
 //
 // *************** Handling Collection EVents end ******************
 
-// **************** Templating ******************
+// // **************** Templating ******************
+//
+// var Song = Backbone.Model.extend();
+//
+// var SongView = Backbone.View.extend({
+//   render: function () {
+//     var template = _.template($('#songTemplate').html());
+//     var html = template(this.model.toJSON());
+//     this.$el.html(html);
+//
+//     return this;
+//   }
+// });
+//
+// var song = new Song({title: 'Blue in Green', plays: 1100});
+//
+// var songView = new SongView({ el: '#container', model: song});
+// songView.render();
+// --> insert int index.html: -->
+// --> <script id='songTemplate' type='text/html'><%= title %><button>Listen</button></script>
+//
+// ********************** Templates ********************
 
-var Song = Backbone.Model.extend();
-
-var SongView = Backbone.View.extend({
-  render: function () {
-    var template = _.template($('#songTemplate').html());
-    var html = template(this.model.toJSON());
-    this.$el.html(html);
-
-    return this;
-  }
-});
-
-var song = new Song({title: 'Blue in Green', plays: 1100});
-
-var songView = new SongView({ el: '#container', model: song});
-songView.render();
---> insert int index.html: -->
---> <script id='songTemplate' type='text/html'><%= title %><button>Listen</button></script> -->
+// ******************* Events **********************
+//
+// var person = {
+//   name: 'Szilvia',
+//
+//   walk: function () {
+//     this.trigger('walking',
+//   {
+//     speed: 1,
+//     startTime: '8:00'
+//   });
+//   }
+// };
+//
+// _.extend(person, Backbone.Events);
+//
+// // to trigger/start an event
+// person.on('walking', function (e) {
+//   console.log('Person is walking.', e);
+// });
+// // to unsubscribe from an event
+// person.off('walking');
+//
+// ****************** Events end ********************
