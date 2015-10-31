@@ -7,19 +7,19 @@ var Cars = Backbone.Collection.extend({
 });
 
 // view for one car
-var CarView = Backbone.View.extend({
-  tagName: 'li',
-
-  initialize: function () {
-    this.render()
-  },
-  render: function () {
-    var template = _.template($('#carTemplate').html());
-    var html = template(this.model.toJSON());
-    this.$el.html(html);
-
-    return this;
-  }
+// var CarView = Backbone.View.extend({
+//   tagName: 'li',
+//
+//   initialize: function () {
+//     this.render()
+//   },
+//   render: function () {
+//     var template = _.template($('#carTemplate').html());
+//     var html = template(this.model.toJSON());
+//     this.$el.html(html);
+//
+//     return this;
+//   }
   // tagname li needed
   // template if using one
   // initialize: function () {
