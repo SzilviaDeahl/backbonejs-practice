@@ -3,9 +3,7 @@ body {
 	padding: 40px;
 }
 
-body, p { font-size: 24px; }
-
-
+/*
 #venues-container {
 	float: left;
 	width: 500px;
@@ -36,4 +34,11 @@ body, p { font-size: 24px; }
 	width: 800px;
 	height: 800px;
 	background: #EDE8E8;
-}
+}*/
+ .form-group {
+	 border: 1px solid blue;
+ },
+
+.btn-default {
+	background-color: blue;
+ }
