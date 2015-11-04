@@ -21,7 +21,7 @@ var EmployeeListItemView = Backbone.View.extend({
 var EmployeeListView = Backbone.View.extend({
   tagName: 'ul',
 
-  // className: 'nav navbar-default',
+  className: 'nav navbar-default',
 
   render:function () {
     var self = this;
