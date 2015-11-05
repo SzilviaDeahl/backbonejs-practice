@@ -1,6 +1,79 @@
 
 /*low resolution, 480ps or below, mobile devices etc. */
-@media only screen and (max-width: 480px) { p { color: blue;} }
+@media only screen and (max-width: 480px) {
+  p {
+    color: rgb(0, 0, 0);
+  }
+
+  body {
+    background-color: rgb(244, 244, 244);
+  }
+
+  #master {
+    width: 95%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  header {
+    height: 130px;
+    background-color: rgb(200, 200, 200);
+  }
+
+  nav {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+  }
+
+  nav li {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  nav li a {
+      color: rgb(255, 255, 255);
+  }
+
+  .contentbox {
+    background-color: rgb(200, 200, 200);
+    float: left;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  article {
+    width: 95%;
+    margin-left: 10px;
+  }
+
+  .news {
+    margin-bottom: 20px;
+  }
+
+  footer nav {
+    margin-bottom: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 /* medium resolution, 481px to 1023px */
 @media only screen and (min-width: 481px) {
