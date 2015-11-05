@@ -6,4 +6,85 @@
 @media only screen and (min-width: 481px) { p { color: red; } }
 
 /*high resolution, 1024px amd higher */
-@media only screen and (min-width: 1024px) { p { color: green;} }
+@media only screen and (min-width: 1024px) {
+  p { color: rgb(0, 0, 0);}
+
+  body {
+    background-color: rgb(244, 244, 244);
+    /*gray colored body*/
+  }
+
+  #master {
+    background-color: rgb(255, 255, 255);
+    /*white colored master id*/
+    width: 960px;
+    margin: 0 auto;
+    /*zero means above and below the master, auto means left or right side of the page*/
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  header {
+    width: 960px;
+    height: 130px;
+    background-color: rgb(200, 200, 200);
+  }
+
+  nav{
+    width: 960px;
+    height: 35px;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    /*padding is spacing inside the object, margin is padding outside of the object*/
+  }
+
+  nav li{
+    display: inline;
+    margin-left: 10px;
+  }
+
+  nav li a {
+    color: rgb(255, 255, 255);
+  }
+
+  #slideshow {
+    width: 840px;
+    height: 300px;
+    border: 1px solid rgb( 0, 0, 0);
+    margin: 10px auto;
+  }
+
+  .contentbox {
+    width: 300px;
+    background-color: rgb(200, 200, 200);
+    float: left;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  article {
+    width: 940px;
+    margin-left: 10px;
+  }
+
+  .news {
+    margin-bottom: 20px;
+  }
+
+  footer nav {
+    margin-bottom: 0px;
+  }
+
+
+
+
+
+
+
+
+
+
+}
