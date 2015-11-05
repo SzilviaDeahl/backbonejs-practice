@@ -33,6 +33,7 @@ nav ul {
   nav li {
     display: inline;
     margin-left: 10px;
+    line-height: 160%;
   }
 
   nav li a {
@@ -75,7 +76,7 @@ nav ul {
   #master {
     width: 95%;
     margin: 0 auto;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(193, 180, 152);
     background-color: rgb(255, 255, 255);
   }
 
@@ -94,6 +95,7 @@ nav ul {
   nav li {
     display: inline;
     margin-left: 10px;
+    font-size: 110%;
   }
 
   nav li a {
@@ -105,26 +107,50 @@ nav ul {
     width: 90%;
     height: 300px;
     margin: 10px auto;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(193, 180, 152);
   }
 
   .contentbox {
     background-color: rgb(200, 200, 200);
     float: left;
-    border-top: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(193, 180, 152);
+    border-bottom: 1px solid rgb(193, 180, 152);
     padding: 10px;
     margin-bottom: 10px;
   }
 
+      .contentbox p {
+        font-family: verdana;
+        font-size: 80%;
+        line-height: 140%;
+      }
+
   article {
     width: 95%;
     margin-left: 10px;
+    margin-bottom: 50px;
   }
 
-  .news {
-    margin-bottom: 20px;
-  }
+      .news {
+        margin-bottom: 20px;
+      }
+
+      .news h2 {
+        font-size: 120%;
+        margin-bottom: 5px;
+      }
+
+      .news h2 a {
+        color: rgb(189, 30, 44);
+        text-decoration: none;
+      }
+      .newsmeta{
+        font-size: 70%;
+        margin-top: 5px;
+        float: right;
+        font-family: verdana;
+      }
+      .newsmeta a { color: rgb(189, 30, 44);}
 
   footer nav {
     margin-bottom: 10px;
