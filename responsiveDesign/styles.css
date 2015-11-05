@@ -1,4 +1,6 @@
-
+nav ul {
+  -webkit-padding-start: 0;
+}
 /*low resolution, 480ps or below, mobile devices etc. */
 @media only screen and (max-width: 480px) {
   p {
@@ -35,6 +37,7 @@
 
   nav li a {
       color: rgb(255, 255, 255);
+      text-decoration: none;
   }
 
   .contentbox {
@@ -58,20 +61,6 @@
   footer nav {
     margin-bottom: 10px;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 
@@ -109,6 +98,7 @@
 
   nav li a {
     color: rgb(255, 255, 255);
+    text-decoration: none;
   }
 
   #slideshow {
@@ -175,19 +165,21 @@
     /*padding is spacing inside the object, margin is padding outside of the object*/
   }
 
-  nav li{
-    display: inline;
-    margin-left: 10px;
-  }
+      nav li{
+        display: inline;
+        margin-left: 10px;
+        font-size: 110%;
+      }
 
-  nav li a {
-    color: rgb(255, 255, 255);
-  }
+      nav li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+      }
 
   #slideshow {
     width: 840px;
     height: 300px;
-    border: 1px solid rgb( 0, 0, 0);
+    border: 1px solid rgb(193, 180, 152);
     margin: 10px auto;
   }
 
@@ -195,23 +187,50 @@
     width: 300px;
     background-color: rgb(200, 200, 200);
     float: left;
-    border-top: 1px solid rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(0, 0, 0);
+    border-top: 1px solid rgb(193, 180, 152);
+    border-bottom: 1px solid rgb(193, 180, 152);
     padding: 10px;
     margin-bottom: 10px;
   }
 
+      .contentbox p {
+        font-family: verdana;
+        font-size: 80%;
+        line-height: 140%;
+      }
+
   article {
     width: 940px;
     margin-left: 10px;
+    margin-bottom: 50px;
   }
 
-  .news {
-    margin-bottom: 20px;
-  }
+      .news {
+        margin-bottom: 20px;
+      }
+
+      .news h2 {
+        font-size: 120%;
+        margin-bottom: 5px;
+      }
+
+      .news h2 a {
+        text-decoration: none;
+        color: rgb(189, 30, 44);
+      }
+      .newsmeta{
+        font-size: 70%;
+        margin-top: 5px;
+        float: right;
+        font-family: verdana;
+      }
+
+      .newsmeta a { color: rgb(189, 30, 44)}
 
   footer nav {
     margin-bottom: 0px;
+    font-size: 70%;
+    font-family: verdana;
   }
 
 }
