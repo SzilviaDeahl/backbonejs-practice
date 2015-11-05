@@ -1,6 +1,8 @@
 
 body {
-	padding: 40px;
+	padding: 80px;
+	margin: auto;
+	background-color: lightblue;
 }
 
 /*
@@ -35,9 +37,13 @@ body {
 	height: 800px;
 	background: #EDE8E8;
 }*/
- .form-group {
- },
+
 
 .btn-default {
 	background-color: blue;
  }
+.thumbnail {
+	width: 200px;
+	height: 300px;
+	text-align: center;
+}
