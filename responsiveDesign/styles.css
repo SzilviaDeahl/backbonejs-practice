@@ -1,3 +1,9 @@
-body {
-  background-color: lightblue;
-}
+
+/*low resolution, 480ps or below, mobile devices etc. */
+@media only screen and (max-width: 480px) { p { color: blue;} }
+
+/* medium resolution, 481px to 1023px */
+@media only screen and (min-width: 481px) { p { color: red; } }
+
+/*high resolution, 1024px amd higher */
+@media only screen and (min-width: 1024px) { p { color: green;} }
