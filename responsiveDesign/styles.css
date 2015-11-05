@@ -3,7 +3,70 @@
 @media only screen and (max-width: 480px) { p { color: blue;} }
 
 /* medium resolution, 481px to 1023px */
-@media only screen and (min-width: 481px) { p { color: red; } }
+@media only screen and (min-width: 481px) {
+  p { color: rgb(0, 0, 0); }
+
+  body {
+    background-color: rgb(244, 244, 244);
+  }
+
+  #master {
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
+
+  header {
+    height: 130px;
+    background-color: rgb(200, 200, 200);
+  }
+
+  nav {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+  }
+
+  nav li {
+    display: inline;
+    margin-left: 10px;
+  }
+
+  nav li a {
+    color: rgb(255, 255, 255);
+  }
+
+  #slideshow {
+    width: 90%;
+    height: 300px;
+    margin: 10px auto;
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .contentbox {
+    background-color: rgb(200, 200, 200);
+    float: left;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  article {
+    width: 95%;
+    margin-left: 10px;
+  }
+
+  .news {
+    margin-bottom: 20px;
+  }
+
+  footer nav {
+    margin-bottom: 10px;
+  }
+}
 
 /*high resolution, 1024px amd higher */
 @media only screen and (min-width: 1024px) {
@@ -77,14 +140,5 @@
   footer nav {
     margin-bottom: 0px;
   }
-
-
-
-
-
-
-
-
-
 
 }
