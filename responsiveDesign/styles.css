@@ -290,3 +290,7 @@ nav ul {
   }
 
 }
+
+.delete {
+  float: right;
+}
